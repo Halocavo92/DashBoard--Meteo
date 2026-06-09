@@ -1,8 +1,10 @@
-// script.js - Dashboard Meteo con Open-Meteo
-// Pagine previste:
-// - meteo.html      -> deve contenere: <div id="weather-list" class="row g-4"></div>
-// - previsioni.html -> deve contenere: <div id="forecast-table"></div>
+// Dashboard meteo - chiamate a Open-Meteo.
+// Questo file lo usano due pagine: meteo.html (le card del meteo attuale,
+// nel div #weather-list) e previsioni.html (la tabella, nel div #forecast-table).
+// Tengo tutto in un unico file così non devo duplicare le funzioni.
 
+// Le città le scrivo qui a mano con le loro coordinate. Per aggiungerne una
+// basta mettere un nuovo oggetto in questa lista.
 const CITIES = [
   { name: "Firenze", latitude: 43.7696, longitude: 11.2558 },
   { name: "Roma", latitude: 41.9028, longitude: 12.4964 },
@@ -11,15 +13,21 @@ const CITIES = [
   { name: "Tokyo", latitude: 35.6762, longitude: 139.6503 }
 ];
 
+// Aspetto che la pagina sia carica, poi controllo quale dei due contenitori
+// esiste. Così lo stesso script capisce da solo su quale pagina si trova:
+// se trova #weather-list carico le card, se trova #forecast-table la tabella.
 document.addEventListener("DOMContentLoaded", () => {
   if (document.querySelector("#weather-list")) {
     loadCurrentWeather();
   }
   if (document.querySelector("#forecast-table")) {
+    // Per le previsioni parto dalla prima città della lista (Firenze).
     loadForecast(CITIES[0]);
   }
 });
 
+// Costruisco l'URL della chiamata. Uso URLSearchParams invece di concatenare
+// le stringhe a mano: è più pulito e mi mette i parametri nel formato giusto.
 function buildWeatherUrl(city) {
   const params = new URLSearchParams({
     latitude: city.latitude,
@@ -31,6 +39,9 @@ function buildWeatherUrl(city) {
   return `https://api.open-meteo.com/v1/forecast?${params.toString()}`;
 }
 
+// Piccola funzione di appoggio per le chiamate. Controllo response.ok perché
+// fetch da solo NON lancia un errore sugli stati tipo 404 o 500: senza questo
+// controllo proverei a leggere un JSON che non c'è. Se va male lancio io l'errore.
 async function getJSON(url) {
   const response = await fetch(url);
   if (!response.ok) {
@@ -39,6 +50,9 @@ async function getJSON(url) {
   return await response.json();
 }
 
+// Open-Meteo mi dà la condizione del cielo come numero (weather_code), non come
+// testo. Qui lo traduco in italiano. Non ho messo proprio tutti i codici, solo
+// quelli più comuni; se ne arriva uno fuori lista lo gestisco sotto.
 function weatherCodeToText(code) {
   const codes = {
     0: "Cielo sereno",
@@ -61,9 +75,12 @@ function weatherCodeToText(code) {
     82: "Rovesci intensi",
     95: "Temporale"
   };
+  // Se il codice non è nella tabella mostro almeno il numero, così non resta vuoto.
   return codes[code] || `Codice meteo ${code}`;
 }
 
+// Mostra un riquadro colorato di Bootstrap. Lo riuso sia per i messaggi di
+// "caricamento" sia per gli errori, cambiando solo il tipo (info, danger...).
 function showAlert(container, message, type = "warning") {
   container.innerHTML = `
     <div class="alert alert-${type}" role="alert">
@@ -72,8 +89,11 @@ function showAlert(container, message, type = "warning") {
   `;
 }
 
+// Carica le card del meteo attuale (pagina meteo.html).
 async function loadCurrentWeather() {
   const container = document.querySelector("#weather-list");
+  // Prima mostro un messaggio di attesa, così l'utente non vede la pagina vuota
+  // mentre arrivano i dati.
   container.innerHTML = `
     <div class="col-12">
       <div class="alert alert-info">Caricamento dati meteo...</div>
@@ -81,6 +101,9 @@ async function loadCurrentWeather() {
   `;
 
   try {
+    // Prendo solo le prime 3 città per non riempire troppo la pagina.
+    // Uso Promise.all così le chiamate partono insieme invece che una alla volta:
+    // è più veloce che aspettare la fine di ognuna prima di iniziare la successiva.
     const results = await Promise.all(
       CITIES.slice(0, 3).map(async city => {
         const data = await getJSON(buildWeatherUrl(city));
@@ -105,6 +128,8 @@ async function loadCurrentWeather() {
       `;
     }).join("");
   } catch (error) {
+    // Se qualcosa va storto (rete giù, API che non risponde...) lo dico
+    // chiaramente con un alert rosso invece di lasciare la pagina rotta.
     container.innerHTML = `
       <div class="col-12">
         <div class="alert alert-danger" role="alert">
@@ -115,6 +140,7 @@ async function loadCurrentWeather() {
   }
 }
 
+// Carica la tabella delle previsioni (pagina previsioni.html) per una città.
 async function loadForecast(city) {
   const container = document.querySelector("#forecast-table");
   showAlert(container, `Caricamento previsioni per ${city.name}...`, "info");
@@ -123,6 +149,8 @@ async function loadForecast(city) {
     const data = await getJSON(buildWeatherUrl(city));
     const daily = data.daily;
 
+    // I dati giornalieri arrivano come array paralleli (date, minime, massime):
+    // scorro le date e per ogni giorno prendo la min e la max con lo stesso indice.
     const rows = daily.time.map((day, index) => `
       <tr>
         <td>${day}</td>

@@ -1,50 +1,37 @@
 # DashBoard--Meteo
 
-Questo progetto è una mini dashboard meteo creata con HTML, CSS e JavaScript. Ho messo insieme una homepage, una pagina per il meteo attuale e una pagina con una tabella dedicata alle previsioni.
+Questa è la mia dashboard meteo, un piccolo progetto front-end con cui ho voluto provare a collegare un sito a un'API vera. Niente di complicato: tre pagine HTML, un po' di Bootstrap per non perdere tempo con il CSS da zero, e uno script che va a chiedere i dati a Open-Meteo.
 
-## Cosa fa il progetto
+All'inizio pensavo di usare dei dati finti, poi ho deciso di collegare davvero l'API così la pagina mostra il meteo reale al momento in cui la apri.
 
-- mostra una navbar per navigare tra le pagine
-- descrive l'API meteo usata
-- presenta le città disponibili con delle card
-- mostra una tabella di esempio per le previsioni
+## Cosa fa
 
-## Tecnologie utilizzate
+La homepage presenta il progetto e una navbar per spostarsi tra le sezioni. Nella pagina meteo trovo le card con la temperatura attuale, il vento e la condizione del cielo per le prime tre città. La pagina previsioni invece carica una tabella con minime e massime giorno per giorno.
 
-- HTML
-- CSS
-- Bootstrap 5
-- JavaScript
+## Le città
 
-## API
-Questa versione usa dati di esempio e si basa su servizi come:
-- OpenWeatherMap
-- WeatherAPI
-- Open-Meteo
+Nel codice ne ho messe cinque: Firenze, Roma, Milano, Parigi e Tokyo. La pagina del meteo attuale ne mostra solo le prime tre (le altre due servono per le prove e per le previsioni). Firenze è la prima della lista perché è quella che uso di default nelle previsioni.
 
-## Città incluse
-- Milano
-- Roma
-- Venezia
-- Torino
-- Napoli
-- Firenze
+## Tecnologie
 
-## Struttura del progetto
+- HTML e CSS per la struttura e lo stile
+- Bootstrap 5 (preso da CDN, quindi serve la connessione)
+- JavaScript "vanilla", senza framework
+- API di [Open-Meteo](https://open-meteo.com/), gratuita e senza chiave
 
-- `index.html` — homepage
-- `meteo.html` — pagina meteo attuale
-- `previsioni.html` — pagina previsioni
-- `style.css` — stile personalizzato
-- `script.js` — script JavaScript
+## Come è organizzato
+
+- `index.html` — la homepage
+- `meteo.html` — il meteo attuale, con le card
+- `previsioni.html` — la tabella delle previsioni
+- `style.css` — qualche stile mio in aggiunta a Bootstrap
+- `script.js` — tutta la logica delle chiamate all'API
 - `assets/` — immagini e risorse
-- `docs/` — documentazione
+- `docs/` — le note su installazione, API e domande frequenti
 
 ## Documentazione
 
-- `docs/installazione.md`
-- `docs/faq.md`
-- `docs/api.md`
+Ho diviso le note in tre file dentro `docs/`: `installazione.md` per far partire il progetto, `api.md` per capire come uso Open-Meteo e `faq.md` per le domande più comuni.
 
 ## Autore
 

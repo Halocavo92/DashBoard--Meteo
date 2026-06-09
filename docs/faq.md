@@ -1,23 +1,30 @@
-## 1. Come apro il sito?
-Apri `index.html` nel browser e sei pronto. Se vuoi fare una prova più comoda, usa Live Server in Visual Studio Code.
+# Domande frequenti
 
-## 2. Dove trovo la pagina meteo?
-La pagina si chiama `meteo.html` e si raggiunge anche dalla navbar.
+Qui ho raccolto le domande che mi sono fatto io stesso mentre mettevo insieme il progetto, più qualcuna che mi hanno chiesto provandolo.
 
-## 3. Come vedo le previsioni?
-Vai su `previsioni.html`. Lì c'è una tabella di esempio che mostra il formato delle previsioni.
+## Come apro il sito?
+Basta aprire `index.html` con un doppio clic e parte nel browser. Io però lavoro con Live Server su VS Code, perché ricarica la pagina da solo ogni volta che salvo ed è più comodo durante le prove.
 
-## 4. Quale API usa il progetto?
-In questo esercizio si fa riferimento a servizi come OpenWeatherMap, Open-Meteo o WeatherAPI.
+## Mi serve internet?
+Sì, per due motivi: Bootstrap lo prendo da un CDN, e soprattutto i dati meteo arrivano in diretta da Open-Meteo. Offline le pagine si aprono lo stesso, ma resta tutto vuoto.
 
-## 5. Posso cambiare le città mostrate?
-Certo: aggiungi una nuova card in `index.html` e, se vuoi, aggiorna anche la tabella in `previsioni.html`.
+## Dove vedo il meteo attuale?
+Nella pagina `meteo.html`, che raggiungi anche dalla navbar in alto. Mostra le card delle prime tre città.
 
-## 6. Mi serve una chiave API?
-No, per questa versione non è necessario avere una chiave reale.
+## E le previsioni?
+Sono in `previsioni.html`. Lì c'è la tabella con minime e massime giorno per giorno. Per ora è fissa su Firenze, la prima città della lista.
 
-## 7. Serve un server web?
-No, funziona anche aprendo i file direttamente dal browser.
+## Quale API usa?
+Solo Open-Meteo. All'inizio avevo scritto nei documenti anche OpenWeatherMap, ma alla fine non l'ho usata, quindi ho tolto il riferimento per non confondere.
 
-## 8. Posso usare il progetto per imparare?
-Sì, è pensato come esempio semplice di front-end con Bootstrap e JavaScript. Buon divertimento!
+## Serve una chiave API?
+No, ed è il bello di Open-Meteo: nessuna registrazione, nessuna chiave. Si chiama l'indirizzo e basta.
+
+## Posso aggiungere o cambiare le città?
+Sì. In cima a `script.js` c'è l'array `CITIES`: aggiungi un oggetto con nome, latitudine e longitudine e compare anche nel sito. Le coordinate le trovo cercando il nome della città su Open-Meteo o su una mappa.
+
+## Serve un server web?
+No, è tutto statico. Niente PHP, niente database, niente da installare lato server.
+
+## Posso usarlo per imparare?
+Per quello l'ho fatto. Se ti va, smonta il codice e cambialo: è il modo migliore per capire come funziona una chiamata `fetch` a un'API.
