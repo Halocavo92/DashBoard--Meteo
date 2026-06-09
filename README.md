@@ -1,15 +1,15 @@
 # DashBoard--Meteo
 
-Questo è un semplice sito multipagina per una dashboard meteo. Mostra una homepage, una pagina con le condizioni attuali e una pagina con le previsioni.
+Questo progetto è una piccola dashboard meteo realizzata con HTML, CSS e JavaScript. Ho pensato una homepage, una pagina per il meteo attuale e una pagina con una tabella di previsioni.
 
-# Funzionalità
+## Cosa fa il progetto
 
-- Navbar responsive per muoversi tra le pagine
-- Sezione che spiega l'API meteo
-- Card delle città disponibili
-- Tabella di esempio per le previsioni
+- mostra una navbar per navigare tra le pagine
+- descrive l'API meteo usata
+- presenta le città disponibili con delle card
+- mostra una tabella di esempio per le previsioni
 
-## Tecnologie
+## Tecnologie utilizzate
 
 - HTML
 - CSS
@@ -17,6 +17,7 @@ Questo è un semplice sito multipagina per una dashboard meteo. Mostra una homep
 - JavaScript
 
 ## API
+Questa versione usa dati di esempio e si basa su servizi come:
 - OpenWeatherMap
 - WeatherAPI
 - Open-Meteo

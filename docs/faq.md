@@ -1,20 +1,23 @@
 ## 1. Come apro il sito?
-Basta aprire `index.html` nel browser. Se preferisci, puoi usare Live Server in Visual Studio Code.
+Apri `index.html` nel browser. Se vuoi puoi anche usare Live Server in Visual Studio Code.
 
 ## 2. Dove trovo la pagina meteo?
-La pagina si chiama `meteo.html`. È anche accessibile dalla navbar del sito.
+La pagina si chiama `meteo.html` e si raggiunge anche dalla navbar.
 
 ## 3. Come vedo le previsioni?
-Visita `previsioni.html`: qui c'è una tabella con un esempio di previsioni meteo.
+Vai su `previsioni.html`: c'è una tabella con un esempio di forecast.
 
 ## 4. Quale API usa il progetto?
-I dati meteo sono pensati per arrivare da un servizio esterno come OpenWeatherMap, Open-Meteo o WeatherAPI.
+In questo esercizio si fa riferimento a servizi come OpenWeatherMap, Open-Meteo o WeatherAPI.
 
-## 5. Posso modificare le città mostrate?
-Sì: aggiungi una nuova card in `index.html` e, se serve, aggiorna anche la tabella in `previsioni.html`.
+## 5. Posso cambiare le città mostrate?
+Sì: aggiungi una nuova card in `index.html`, e se vuoi puoi aggiornare anche la tabella in `previsioni.html`.
 
-## 6. Devo avere una chiave API?
-No, per questa versione di esempio non serve una chiave attiva. L'idea è di usare un'API esterna in un'eventuale versione completa.
+## 6. Mi serve una chiave API?
+No, per questa versione non è necessario avere una chiave reale.
 
-## 7. È necessario un server web?
-No: il sito è statico e funziona anche aprendolo direttamente dal file system del browser.
+## 7. Serve un server web?
+No, il sito funziona anche aprendo i file direttamente dal browser.
+
+## 8. Posso usare il progetto per imparare?
+Sì, è fatto proprio per essere un esempio semplice di front-end con Bootstrap e JavaScript.
