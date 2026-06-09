@@ -1,6 +1,6 @@
 # DashBoard--Meteo
 
-Questo progetto è una piccola dashboard meteo realizzata con HTML, CSS e JavaScript. Ho pensato una homepage, una pagina per il meteo attuale e una pagina con una tabella di previsioni.
+Questo progetto è una mini dashboard meteo creata con HTML, CSS e JavaScript. Ho messo insieme una homepage, una pagina per il meteo attuale e una pagina con una tabella dedicata alle previsioni.
 
 ## Cosa fa il progetto
 

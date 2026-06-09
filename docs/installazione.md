@@ -16,4 +16,4 @@
 Se hai l'estensione Live Server, apri la cartella del progetto e avvia Live Server su `index.html`.
 
 ## Nota
-Questo è un progetto statico, quindi non serve installare nulla di speciale.
+È un progetto statico, quindi non serve installare nulla di speciale. Apri e guarda subito il risultato.
