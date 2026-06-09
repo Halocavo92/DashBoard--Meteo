@@ -1,17 +1,20 @@
 ## 1. Come apro il sito?
-Apri `index.html` nel browser oppure usa un server locale come Live Server.
+Basta aprire `index.html` nel browser. Se preferisci, puoi usare Live Server in Visual Studio Code.
 
-## 2. Dove si trova la pagina meteo?
-La pagina meteo è `meteo.html`. Puoi raggiungerla anche cliccando sul collegamento nella navbar.
+## 2. Dove trovo la pagina meteo?
+La pagina si chiama `meteo.html`. È anche accessibile dalla navbar del sito.
 
-## 3. Come faccio a vedere le previsioni?
-Vai su `previsioni.html`; in questa pagina è presente una tabella con le previsioni di esempio.
+## 3. Come vedo le previsioni?
+Visita `previsioni.html`: qui c'è una tabella con un esempio di previsioni meteo.
 
-## 4. Quale API utilizza il progetto?
-Il progetto è pensato per usare un’API meteo esterna come OpenWeatherMap, WeatherAPI o Open-Meteo.
+## 4. Quale API usa il progetto?
+I dati meteo sono pensati per arrivare da un servizio esterno come OpenWeatherMap, Open-Meteo o WeatherAPI.
 
-## 5. Perché nella navbar non vedo i link funzionanti?
-Assicurati che i collegamenti `href` nei file HTML puntino ai file giusti, ad esempio `index.html`, `meteo.html`, `previsioni.html`.
+## 5. Posso modificare le città mostrate?
+Sì: aggiungi una nuova card in `index.html` e, se serve, aggiorna anche la tabella in `previsioni.html`.
 
-## 6. Come aggiungo una nuova città?
-Aggiungi una nuova card in `index.html` e, se vuoi, inserisci i dati anche nella tabella di `previsioni.html`.
+## 6. Devo avere una chiave API?
+No, per questa versione di esempio non serve una chiave attiva. L'idea è di usare un'API esterna in un'eventuale versione completa.
+
+## 7. È necessario un server web?
+No: il sito è statico e funziona anche aprendolo direttamente dal file system del browser.

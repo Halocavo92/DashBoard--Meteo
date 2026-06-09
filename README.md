@@ -1,13 +1,13 @@
 # DashBoard--Meteo
 
-E' un progetto di un sito multipagina che mostra le previsioni meteo per alune delle principali città italiane
+Questo è un semplice sito multipagina per una dashboard meteo. Mostra una homepage, una pagina con le condizioni attuali e una pagina con le previsioni.
 
 # Funzionalità
 
-- Barra di navigazione con collegamenti tra le pagine
-- Pagina API che descrive la fonte dei dati
-- Card per le città
-- Tabella delle Previsioni
+- Navbar responsive per muoversi tra le pagine
+- Sezione che spiega l'API meteo
+- Card delle città disponibili
+- Tabella di esempio per le previsioni
 
 ## Tecnologie
 
@@ -17,20 +17,20 @@ E' un progetto di un sito multipagina che mostra le previsioni meteo per alune d
 - JavaScript
 
 ## API
-- OpenweatherMap
+- OpenWeatherMap
 - WeatherAPI
-- OpenMeteo
+- Open-Meteo
 
-## Città
+## Città incluse
 - Milano
 - Roma
 - Venezia
 - Torino
 - Napoli
 - Firenze
- 
-## Struttura Repository
-```
+
+## Struttura del progetto
+
 - `index.html` — homepage
 - `meteo.html` — pagina meteo attuale
 - `previsioni.html` — pagina previsioni
@@ -38,13 +38,12 @@ E' un progetto di un sito multipagina che mostra le previsioni meteo per alune d
 - `script.js` — script JavaScript
 - `assets/` — immagini e risorse
 - `docs/` — documentazione
-```
+
 ## Documentazione
-```
+
 - `docs/installazione.md`
 - `docs/faq.md`
 - `docs/api.md`
-```
 
 ## Autore
 
