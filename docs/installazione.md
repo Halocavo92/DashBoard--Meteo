@@ -9,8 +9,8 @@ Un browser recente (Chrome, Firefox, Edge o Safari vanno tutti bene) e una conne
 Se hai git, clona la repository:
 
 ```bash
-git clone https://github.com/Halocavo92/DashBoard-Meteo.git
-cd DashBoard-Meteo
+git clone https://github.com/Halocavo92/DashBoard--Meteo.git
+cd DashBoard--Meteo
 ```
 
 Poi apri `index.html` nel browser e ci sei. In alternativa puoi anche scaricare lo zip da GitHub e aprire il file allo stesso modo, senza usare git.

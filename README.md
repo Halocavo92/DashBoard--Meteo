@@ -4,6 +4,8 @@ Questa è la mia dashboard meteo, un piccolo progetto front-end con cui ho volut
 
 All'inizio pensavo di usare dei dati finti, poi ho deciso di collegare davvero l'API così la pagina mostra il meteo reale al momento in cui la apri.
 
+🔗 **Sito online:** [halocavo92.github.io/DashBoard--Meteo](https://halocavo92.github.io/DashBoard--Meteo/) — l'ho pubblicato con GitHub Pages, così si può provare direttamente senza scaricare niente.
+
 ## Cosa fa
 
 La homepage presenta il progetto e una navbar per spostarsi tra le sezioni. Nella pagina meteo trovo le card con la temperatura attuale, il vento e la condizione del cielo per le prime tre città. La pagina previsioni invece carica una tabella con minime e massime giorno per giorno.
@@ -33,6 +35,11 @@ Nel codice ne ho messe cinque: Firenze, Roma, Milano, Parigi e Tokyo. La pagina 
 
 Ho diviso le note in tre file dentro `docs/`: `installazione.md` per far partire il progetto, `api.md` per capire come uso Open-Meteo e `faq.md` per le domande più comuni.
 
+## Licenza
+
+Ho rilasciato il progetto con licenza **MIT** (il file [LICENSE](LICENSE)). L'ho scelta perché è la più semplice e permissiva: chiunque può usare, copiare e modificare il codice, anche per altri progetti, basta che resti il riconoscimento dell'autore. Trattandosi di un esercizio pensato per imparare e da mostrare, mi sembrava la scelta più sensata: non volevo mettere paletti a chi vuole prenderlo come spunto.
+
 ## Autore
 
 Halocavo92
+

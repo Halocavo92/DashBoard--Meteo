@@ -21,10 +21,27 @@ document.addEventListener("DOMContentLoaded", () => {
     loadCurrentWeather();
   }
   if (document.querySelector("#forecast-table")) {
+    setupCitySelect();
     // Per le previsioni parto dalla prima città della lista (Firenze).
     loadForecast(CITIES[0]);
   }
 });
+
+// Riempie il menu a tendina con tutte le città e ricarica la tabella quando
+// l'utente ne sceglie una diversa. Uso l'indice dell'array come valore così
+// non devo cercare la città per nome.
+function setupCitySelect() {
+  const select = document.querySelector("#city-select");
+  if (!select) return;
+
+  select.innerHTML = CITIES
+    .map((city, index) => `<option value="${index}">${city.name}</option>`)
+    .join("");
+
+  select.addEventListener("change", () => {
+    loadForecast(CITIES[select.value]);
+  });
+}
 
 // Costruisco l'URL della chiamata. Uso URLSearchParams invece di concatenare
 // le stringhe a mano: è più pulito e mi mette i parametri nel formato giusto.
